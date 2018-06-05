@@ -6,7 +6,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "webpack --config webpack.dev.js"
+    "build": "webpack --config webpack.dev.js",
+    "lint": "eslint -c .eslintrc src/**/*"
   },
   "license": "MIT",
   "devDependencies": {
