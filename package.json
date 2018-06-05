@@ -3,16 +3,29 @@
   "author": "Mike Cluck",
   "version": "1.0.0",
   "description": "A UI for the win-opacity module",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "webpack --config webpack.dev.js"
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "electron": "^2.0.2",
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
+    "webpack": "^4.11.0",
+    "webpack-cli": "^3.0.2",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "redux": "^4.0.0",
     "win-opacity": "^1.0.1"
   }
 }
