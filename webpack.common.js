@@ -1,8 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+	target: 'electron-renderer',
 	entry: {
 		'client': path.resolve(__dirname, 'src/client/main.jsx')
 	},

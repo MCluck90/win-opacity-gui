@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const { getWindows } = require('win-opacity');
 
 let win = null;
 
@@ -9,6 +10,8 @@ const createWindow = () => {
   });
 
   win.loadFile('index.html');
+
+  win.webContents.openDevTools();
 
   win.on('closed', () => {
     win = null;
@@ -29,3 +32,7 @@ app
       createWindow();
     }
   });
+
+ipcMain.on('request-windows', () => {
+  win.webContents.send('receive-windows', getWindows());
+});
