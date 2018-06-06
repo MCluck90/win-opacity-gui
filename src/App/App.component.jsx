@@ -10,11 +10,12 @@ export class App extends React.Component {
 	}
 
 	render() {
-		const { windows } = this.props;
+		const { requestWindows, windows } = this.props;
 
 		return (
 			<div className={styles.app}>
 				<Header />
+				<button className={styles.refreshButton} onClick={requestWindows}>Refresh</button>
 				<WindowList windows={windows} />
 			</div>
 		);
