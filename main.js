@@ -5,8 +5,10 @@ let win = null;
 
 const createWindow = () => {
   win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 1024,
+    height: 768,
+    frame: false,
+    transparent: true
   });
 
   win.loadFile('index.html');

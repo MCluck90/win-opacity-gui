@@ -1,5 +1,6 @@
 .window-list {
 	margin: 0;
-	padding: 0;
+	padding: 0 2em;
 	list-style-type: none;
+	width: 100%;
 }
