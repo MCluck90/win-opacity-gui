@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { getWindows, getOpacity } = require('win-opacity');
+const { getWindows, getOpacity, setOpacity } = require('win-opacity');
 
 let win = null;
 
@@ -39,4 +39,8 @@ ipcMain.on('request-windows', () => {
     ...window,
     opacity: getOpacity(window) || 255
   })));
+});
+
+ipcMain.on('change-opacity', (_, handle, opacity) => {
+  setOpacity(handle, opacity);
 });

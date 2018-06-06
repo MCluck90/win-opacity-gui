@@ -5,7 +5,7 @@ import { WindowControl as WindowControlComponent } from './WindowControl.compone
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
 	changeOpacity: (handle, event) => {
-		const opacity = event.target.value;
+		const opacity = Number(event.target.value);
 		return dispatch(changeOpacity(handle, opacity));
 	}
 });
