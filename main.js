@@ -37,11 +37,28 @@ app
 
 ipcMain.on('request-windows', () => {
   const windows = getWindows()
+    // Filter out windows that I don't want to appear in the list
+    // These are system windows that cannot be changed anyway
+    .filter(({ title }) => ![
+      'Action center',
+      'Cortana',
+      'Mail', 
+      'Microsoft Edge',
+      'Microsoft Store', 
+      'New notification', 
+      'Settings', 
+      'Start',
+      'Window',
+      'Windows Default Lock Screen',
+      'Windows Shell Experience Host'
+    ].includes(title))
     .sort((a, b) => {
-      if (a.title < b.title) {
+      const aTitle = a.title.toLocaleLowerCase();
+      const bTitle = b.title.toLocaleLowerCase();
+      if (aTitle < bTitle) {
         return -1;
       }
-      if (a.title > b.title) {
+      if (aTitle > bTitle) {
         return 1;
       }
       return 0;
