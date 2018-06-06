@@ -1,6 +1,9 @@
 .window-list {
+	flex: 1;
+	opacity: 0.901;
+	background: #040404;
 	margin: 0;
 	padding: 0 2em;
 	list-style-type: none;
-	width: 100%;
+	overflow: auto;
 }
