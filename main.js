@@ -34,7 +34,16 @@ app
   });
 
 ipcMain.on('request-windows', () => {
-  const windows = getWindows();
+  const windows = getWindows()
+    .sort((a, b) => {
+      if (a.title < b.title) {
+        return -1;
+      }
+      if (a.title > b.title) {
+        return 1;
+      }
+      return 0;
+    });
   win.webContents.send('receive-windows', windows.map(window => ({
     ...window,
     opacity: getOpacity(window) || 255
