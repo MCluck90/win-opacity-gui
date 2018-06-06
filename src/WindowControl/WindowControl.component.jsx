@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-export const WindowControl = ({ title, handle }) => (
+export const WindowControl = ({ title, handle, opacity }) => (
 	<div>
-		<b>{handle}:</b>
-		{title}
+		<h3>{handle}</h3>
+		<h3>{title}</h3>
+		<h3>{opacity}</h3>
 	</div>
 );

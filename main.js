@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { getWindows } = require('win-opacity');
+const { getWindows, getOpacity } = require('win-opacity');
 
 let win = null;
 
@@ -34,5 +34,9 @@ app
   });
 
 ipcMain.on('request-windows', () => {
-  win.webContents.send('receive-windows', getWindows());
+  const windows = getWindows();
+  win.webContents.send('receive-windows', windows.map(window => ({
+    ...window,
+    opacity: getOpacity(window) || 255
+  })));
 });
