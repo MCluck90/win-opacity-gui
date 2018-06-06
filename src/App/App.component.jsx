@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { WindowList } from '../WindowList';
 import * as styles from './App.css';
 
 export class App extends React.Component {
@@ -12,7 +13,7 @@ export class App extends React.Component {
 
 		return (
 			<div className={styles.app}>
-				{ windows.map(w => (<h1 key={w.handle}>{w.title}</h1>)) }
+				<WindowList windows={windows} />
 			</div>
 		);
 	}

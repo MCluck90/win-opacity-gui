@@ -1,0 +1,1 @@
+export { WindowControl } from './WindowControl.component';
