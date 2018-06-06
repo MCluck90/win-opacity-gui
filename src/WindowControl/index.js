@@ -1,1 +1,1 @@
-export { WindowControl } from './WindowControl.component';
+export { WindowControl } from './WindowControl.container';

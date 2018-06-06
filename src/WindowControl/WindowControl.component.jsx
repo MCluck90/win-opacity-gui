@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-export const WindowControl = ({ title, handle, opacity }) => (
+export const WindowControl = ({ handle, title, opacity, changeOpacity }) => (
 	<div>
-		<h3>{handle}</h3>
 		<h3>{title}</h3>
-		<h3>{opacity}</h3>
+		<input type="range" min="1" max="255" value={opacity} onChange={changeOpacity.bind(null, handle)} />
 	</div>
 );
