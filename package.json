@@ -3,7 +3,7 @@
   "author": "Mike Cluck",
   "version": "1.0.0",
   "description": "A UI for the win-opacity module",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "webpack --config webpack.dev.js",
@@ -29,6 +29,7 @@
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "win-opacity": "^1.0.1"
   }
