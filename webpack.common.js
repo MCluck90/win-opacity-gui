@@ -11,10 +11,23 @@ module.exports = {
 		filename: '[name].js'
 	},
 	resolve: {
-		extensions: ['.js', '.jsx']
+		extensions: ['.js', '.jsx', '.css']
 	},
 	module: {
 		rules: [
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							camelCase: true,
+							modules: true
+						}
+					}
+				]
+			},
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
